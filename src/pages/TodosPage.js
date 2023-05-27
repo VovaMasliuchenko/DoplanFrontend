@@ -2,6 +2,7 @@ import axios from "axios";
 import Todo from "../components/Todo";
 import { useEffect, useState, useRef } from "react";
 import TodoHeader from "../components/TodoHeader";
+import { toast } from 'react-toastify';
 
 function TodosPage() {
   const [userData, setUserData] = useState();
@@ -53,6 +54,16 @@ function TodosPage() {
       })
       .then((result) => {
         getTodos();
+        toast.success('Todo was successfully created!', {
+          position: "bottom-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       })
       .catch((err) => console.log(err));
 

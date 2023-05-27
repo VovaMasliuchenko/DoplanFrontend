@@ -34,10 +34,22 @@ function Login() {
         const token = response.data.token;
         localStorage.setItem("token", token);
         setAuthToken(token);
-        toast.success("Logged in successfully!");
+        toast.success("Logged in successfully 😉");
         setNavigate(true);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        toast.error("Login failed 😥", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      });
   };
 
   useEffect(() => {
@@ -71,14 +83,15 @@ function Login() {
   if(navigate) {
     return <Navigate to = "/todos"/>;
   }
+
   return (
     <div className="flex w-full h-screen justify-center">
       <div className="flex justify-center items-center space-x-20">
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center xl:flex lg:hidden md:hidden sm:hidden vsm:hidden">
           <img src={image} className="h-130"></img>
         </div>
-        <div className="col-span-1 flex justify-center items-center">
-          <div className="w-128 pr-10 pl-10 pb-20 pt-20 border-none rounded-lg shadow-md">
+        <div className="flex justify-center items-center">
+          <div className="w-128 pr-10 pl-10 pb-20 pt-20 border-none rounded-lg shadow-md xl:w-128 lg:w-128 md:w-96 sm:w-96 vsm:w-96">
             <div className="mb-5">
               <h1 className="text-3xl font-medium text-center">Log in</h1>
               <hr className="mb-4 mt-5" />
