@@ -1,8 +1,7 @@
-import './App.css';
-
-import Routers from './routes'
-
+import Router from './routes'
 import {setAuthToken} from './helpers/setAuthToken'
+import Footer from './components/welcomePage/Footer';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 
@@ -14,7 +13,20 @@ function App() {
 
   return (
     <div className="App">
-      <Routers/>
+      <Router/>
+      <Footer/>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }

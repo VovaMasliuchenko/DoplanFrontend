@@ -1,19 +1,16 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { Carousel,Card,Button,Row,Col,Pagination } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
-
+import Header from "../components/welcomePage/Header";
+import HeroSection from "../components/welcomePage/HeroSection";
+import AboutSection from "../components/welcomePage/AboutSection";
+import GoalsSection from "../components/welcomePage/GoalsSection";
 
 function WelcomePage() {
-
-    return (
-      <div>
-        <h1>Welcome</h1>
-        <a href="/Login">Login</a>
-        <br/>
-        <a href="/Register">Register</a>
-      </div>
-
-    );
-  }
+  return (
+    <>
+      <Header />
+      <HeroSection />
+      <AboutSection />
+      <GoalsSection />
+    </>
+  );
+}
 export default WelcomePage;

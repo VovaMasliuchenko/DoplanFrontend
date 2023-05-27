@@ -1,37 +1,35 @@
 import React from "react";
-import { Redirect, Switch, Route, Router, BrowserRouter } from "react-router-dom";
-import RouteGuard from "./components/RouteGuard"
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
-//pages
 import TodosPage from "./pages/TodosPage"
 import LoginPage from "./pages/Login"
 import Register from "./pages/Register";
 import WelcomePage from "./pages/WelcomePage";
 
-function Routes() {
+function Router() {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route
-                    exact
-                    path="/"
-                    component={WelcomePage}
-                />
-                <Route
-                    path="/login"
-                    component={LoginPage}
-                />
-                <Route
-                    path="/register"
-                    component={Register}
-                />
-                <Route
-                    path="/todos"
-                    component={TodosPage}
-                />
-            </Switch>
+            <Routes>
+                    <Route
+                        exact
+                        path="/"
+                        element={<WelcomePage/>}
+                    />
+                    <Route
+                        path="/login"
+                        element={<LoginPage/>}
+                    />
+                    <Route
+                        path="/register"
+                        element={<Register/>}
+                    />
+                    <Route
+                        path="/todos"
+                        element={<TodosPage/>}
+                    />
+            </Routes>
         </BrowserRouter>
     );
 }
 
-export default Routes
+export default Router
