@@ -47,6 +47,18 @@ function TodosPage() {
   }
 
   function createTodo() {
+    if(inputRef.current.value === "") {
+      toast.error("This field can't be empty!", {
+        position: "bottom-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+        return;
+    }
     axios
       .post("https://localhost:7137/api/Todo", {
         text: inputRef.current.value,
@@ -59,7 +71,6 @@ function TodosPage() {
           autoClose: 1000,
           hideProgressBar: false,
           closeOnClick: true,
-          pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "light",

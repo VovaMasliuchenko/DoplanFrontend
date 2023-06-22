@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
 
     return (
-      <div className="flex fixed items-center justify-between w-full bg-header-bg pt-4 pb-4 pr-20 pl-20 shadow-md">
+      <div className="flex fixed items-center justify-between w-full bg-header-bg pt-4 pb-4 pr-20 pl-20 shadow-md z-20">
         <div className="logo text-3xl font-bold">
             <a href='/' className="text-white"><span className="text-button-header">Do</span>plan.</a>
         </div>
